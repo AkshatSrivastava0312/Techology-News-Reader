@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+<head>
+    <title>News Reader || Read Top 20 Techology News For Free</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Landing Area Start -->
+  
+ <section class="text-gray-600 body-font">
+    <div class="container px-5 pt-10 mx-auto flex flex-wrap">
+      <div class="lg:w-1/2 w-full mb-10 lg:mb-0 rounded-lg overflow-hidden">
+        {% load static %}
+        <img alt="feature" class="object-cover object-center h-full w-full" src="{% static 'img.jpg' %}">
+      </div>
+      <div class="flex flex-col flex-wrap lg:py-6 -mb-10 lg:w-1/2 lg:pl-12 lg:text-left text-center">
+        <div class="flex flex-col mb-10 lg:items-start items-center">
+          <div class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+            </svg>
+          </div>
+          <div class="flex-grow">
+            <h2 class="text-gray-900 text-lg title-font font-medium mb-3">Welcome to my website</h2>
+            <p class="leading-relaxed text-base">Hy, I am Akshat Srivastava. This website is completely developed by me using Django.</p>
+            <a class="mt-3 text-indigo-500 inline-flex items-center" href="https://www.linkedin.com/in/akshat-srivastava-408048185/">Follow me on LinkedIn
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="flex flex-col mb-10 lg:items-start items-center">
+          <div class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
+              <circle cx="6" cy="6" r="3"></circle>
+              <circle cx="6" cy="18" r="3"></circle>
+              <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path>
+            </svg>
+          </div>
+          <div class="flex-grow">
+            <h2 class="text-gray-900 text-lg title-font font-medium mb-3">My Other Projects</h2>
+            <p class="leading-relaxed text-base">You can find all my projects at my GitHub account.</p>
+            <a class="mt-3 text-indigo-500 inline-flex items-center" href="https://github.com/AkshatSrivastava0312">View my GitHub
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="flex flex-col mb-10 lg:items-start items-center">
+          <div class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
+              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+          <div class="flex-grow">
+            <h2 class="text-gray-900 text-lg title-font font-medium mb-3">Technology News Reader</h2>
+            <p class="leading-relaxed text-base">This website displays the top 20 techology related news articles which are most liked by peoples world-wide. These news articles are scrapped from <a class="text-indigo-500" href="https://news.ycombinator.com/news">Hacker News<a> most voted  headlines. If you like my work, please rate it below.</p>
+                <div class="mt-3"><div class="rw-ui-container mt-5"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <!-- Landing Area End -->
+
+ <!-- News Area Start -->
+
+<section class="text-gray-600 body-font">
+  <div class="container px-5 py-24 mx-auto">
+    <div class="flex flex-col">
+      <div class="h-1 bg-gray-200 rounded overflow-hidden">
+        <div class="w-24 h-full bg-indigo-500"></div>
+      </div>
+      <div class="flex flex-wrap sm:flex-row flex-col py-6 mb-12">
+        <h1 class="sm:w-2/5 text-gray-900 font-medium title-font text-2xl mb-2 sm:mb-0">Top 20 Techology Related News Articles for {{today}}</h1>
+        <p class="sm:w-3/5 leading-relaxed text-base sm:pl-10 pl-0">Here is the top 20 technology related news articles for {{today}}. The news articles gets refreshed each day. I hope you enjoy reading them all. If you do, please rate my work above and also visit my GitHub for more such works of mine.</p>
+      </div>
+    </div>
+    <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
+
+      {% for news_item in news %}
+      
+      <div class="p-4 md:w-1/4 sm:mb-0 mb-6">
+        <div class="rounded-lg h-64 overflow-hidden">
+          <img alt="content" class="object-cover object-center h-full w-full" src="https://picsum.photos/1203/503?random={{ forloop.counter }}">
+        </div>
+        <h2 class="text-xl font-medium title-font text-gray-900 mt-5">{{news_item.title}}</h2>
+        <p class="text-base leading-relaxed mt-2">{{news_item.score}} Votes on Hacker News</p>
+        <a class="text-indigo-500 inline-flex items-center mt-3" href="{{news_item.href}}">Read More
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+
+      {% endfor %}
+      
+    </div>
+  </div>
+</section>
+
+ <!-- News Area End-->
+
+ <!--  Footer Area Start -->
+
+ <footer class="text-gray-600 body-font">
+    <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+      <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">       
+        <span class="ml-3 text-xl">Akshat Srivastava</span>
+      </a>
+      <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2021 Akshat Srivastava
+      </p>
+      <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+        <a class="ml-3 text-gray-500" href="https://www.linkedin.com/in/akshat-srivastava-408048185/">
+          <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+            <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+            <circle cx="4" cy="4" r="2" stroke="none"></circle>
+          </svg>
+        </a>
+      </span>
+    </div>
+  </footer>
+
+ <!--  Footer Area End -->
+ 
+  <script type="text/javascript">(function(d, t, e, m){
+    
+    // Async Rating-Widget initialization.
+    window.RW_Async_Init = function(){
+                
+        RW.init({
+            huid: "475450",
+            uid: "3aaf07851971aa05aefd7d5847e1bc63",
+            source: "website",
+            options: {
+                "advanced": {
+                    "font": {
+                        "bold": true,
+                        "italic": true,
+                        "type": "arial"
+                    }
+                },
+                "size": "medium",
+                "style": "crystal",
+                "isDummy": false
+            } 
+        });
+        RW.render();
+    };
+        // Append Rating-Widget JavaScript library.
+    var rw, s = d.getElementsByTagName(e)[0], id = "rw-js",
+        l = d.location, ck = "Y" + t.getFullYear() + 
+        "M" + t.getMonth() + "D" + t.getDate(), p = l.protocol,
+        f = ((l.search.indexOf("DBG=") > -1) ? "" : ".min"),
+        a = ("https:" == p ? "secure." + m + "js/" : "js." + m);
+    if (d.getElementById(id)) return;              
+    rw = d.createElement(e);
+    rw.id = id; rw.async = true; rw.type = "text/javascript";
+    rw.src = p + "//" + a + "external" + f + ".js?ck=" + ck;
+    s.parentNode.insertBefore(rw, s);
+    }(document, new Date(), "script", "rating-widget.com/"));
+    
+    </script>
+
+</body>
+</html>
